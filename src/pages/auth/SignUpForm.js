@@ -10,10 +10,12 @@ import axios from "axios";
 
 const SignUpForm = () => {
   const [signUpData, setSignUpData] = useState({
-    emailAddress: "",
-    password: "",
+    username: "",
+    email: "",
+    password1: "",
+    password2: "",
   });
-  const { emailAddress, password } = signUpData;
+  const { username, email, password1, password2 } = signUpData;
 
   const [error, setError] = useState({});
 
@@ -43,12 +45,51 @@ const SignUpForm = () => {
         <Container className={`${appStyles.Content} p-4 `}>
           <h1 className={styles.Header}>sign up</h1>
           <Form onSubmit={handleSubmit}>
-            <FormFloatingCustom
-              emailAddress={emailAddress}
-              password={password}
-              handleChange={handleChange}
-              error={error}
-            />
+            <Form.Group controlId="username">
+              <Form.Label>Username</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter username"
+                name="username"
+                value={username}
+                onChange={handleChange}
+              />
+            </Form.Group>
+            <Form.Group controlId="email">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Enter email"
+                name="email"
+                value={email}
+                onChange={handleChange}
+              />
+            </Form.Group>
+            <Form.Group controlId="password1">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Enter password"
+                name="password1"
+                value={password1}
+                onChange={handleChange}
+              />
+            </Form.Group>
+            <Form.Group controlId="password2">
+              <Form.Label>Confirm Password</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Confirm password"
+                name="password2"
+                value={password2}
+                onChange={handleChange}
+              />
+            </Form.Group>
+            {error.non_field_errors?.map((message, idx) => (
+              <Alert key={idx} variant="danger">
+                {message}
+              </Alert>
+            ))}
             <Button variant="primary" type="submit" className={btnStyles.Button}>
               Sign up
             </Button>
@@ -69,44 +110,5 @@ const SignUpForm = () => {
     </Row>
   );
 };
-
-function FormFloatingCustom({ emailAddress, password, handleChange, error }) {
-  return (
-    <>
-      <Form.Floating className="mb-3">
-        <Form.Control
-          id="floatingInputCustom"
-          type="email"
-          placeholder="name@example.com"
-          name="emailAddress"
-          value={emailAddress}
-          onChange={handleChange}
-        />
-        <label htmlFor="floatingInputCustom">Email address</label>
-        {error.emailAddress?.map((message, index) => (
-          <Alert key={index} variant="danger">
-            {message}
-          </Alert>
-        ))}
-      </Form.Floating>
-      <Form.Floating>
-        <Form.Control
-          id="floatingPasswordCustom"
-          type="password"
-          placeholder="Password"
-          name="password"
-          value={password}
-          onChange={handleChange}
-        />
-        <label htmlFor="floatingPasswordCustom">Password</label>
-        {error.password?.map((message, index) => (
-          <Alert key={index} variant="danger">
-            {message}
-          </Alert>
-        ))}
-      </Form.Floating>
-    </>
-  );
-}
 
 export default SignUpForm;
