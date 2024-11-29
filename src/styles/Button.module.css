@@ -1,0 +1,42 @@
+.Button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: background-color 0.3s;
+  
+}
+
+
+.Button:hover {
+  background-color: #45a049;
+}
+
+.Button:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+.Button:active {
+  background-color: #45a049;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.Button:focus {
+  outline: none;
+}
+
+.Button:active:focus {
+  outline: none;
+}

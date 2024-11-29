@@ -1,53 +1,80 @@
 
 .App {
-    font-family: "DM Sans", sans-serif;
-    background-color: #4242425c;
-    min-height: 100vh;
-  }
+  font-family: "DM Sans", sans-serif;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  
+}
 
-  .Main {
-    padding-top: 80px;
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-  a {
-    color: #555555;
-    transition: color ease-in-out 0.3s;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: none;
-  }
-  
-  a:hover i {
-    color: goldenrod;
-    transition: color ease-in-out 0.3s;
+.Main {
+  padding-top: 80px;
+}
 
-  }
-  
-  i {
-    color: #343434;
-    font-size: 1.6rem;
-    padding: 7px;
-    vertical-align: middle;
-  }
-  
-  i:hover {
-    cursor: pointer;
-    transition: color ease-in-out 0.3s;
-    color : goldenrod;
+* {
+  box-sizing: border-box;
+}
 
-  }
+a {
+  color: #555555;
+  transition: color ease-in-out 0.3s;
+  text-decoration: none;
+}
 
-  .NavLink {
-    color: #555555;
-    font-size: 1.2rem;
-    padding: 10px;
-    text-decoration: none;
-    transition: color ease-in-out 0.3s;
+a:hover {
+  text-decoration: none;
+}
 
-  }
+a:hover i {
+  color: goldenrod;
+  transition: color ease-in-out 0.3s;
+
+}
+
+i {
+  color: #343434;
+  font-size: 1.6rem;
+  padding: 7px;
+  vertical-align: middle;
+}
+
+i:hover {
+  cursor: pointer;
+  transition: color ease-in-out 0.3s;
+  color : goldenrod;
+
+}
+
+.NavLink {
+  color: #555555;
+  font-size: 1.2rem;
+  padding: 10px;
+  text-decoration: none;
+  transition: color ease-in-out 0.3s;
+
+}
+
+figure {
+  text-align: center;
+  display: inline-block;
+}
+
+.FillerImage {
+ 
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+
+/* scrollbar */
+*::-webkit-scrollbar {
+  width: 5px;
+}
+*::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+*::-webkit-scrollbar-thumb {
+  background: #888;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
