@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 import Form from "react-bootstrap/Form";
@@ -15,11 +15,11 @@ import styles from "../../styles/SignUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
-import { SetCurrentUserContext } from "../../App";
+import { useSetCurrentUser } from "../../contexs/CurrentUserContex"; // Correct import path
 import signup from "../../assets/signup.png"; // Import the signup image
 
 function SignInForm() {
-  const setCurrentUser = useContext(SetCurrentUserContext);
+  const setCurrentUser = useSetCurrentUser();
 
   const [signInData, setSignInData] = useState({
     username: "",
@@ -88,12 +88,10 @@ function SignInForm() {
         md={6}
         className={`my-auto d-none d-md-block p-2 ${styles.SignInCol}`}
       >
-           <Image className={`${appStyles.FillerImage}`} src={signup} />
+        <Image className={`${appStyles.FillerImage}`} src={signup} />
       </Col>
     </Row>
   );
 }
 
 export default SignInForm;
-
-

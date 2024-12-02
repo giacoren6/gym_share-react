@@ -31,10 +31,10 @@ const SignUpForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/dj-rest-auth/registration/", signUpData);
+      await axios.post("https://gym-share-9a40a7748e0a.herokuapp.com/dj-rest-auth/registration/", signUpData);
       history.push("/signin");
     } catch (error) {
-      console.log(error);
+      console.log("Error response:", error.response);
       setError(error.response?.data);
     }
   };
